@@ -38,23 +38,3 @@ export default function convert(input, speechBubble){
   } 
 
 }
-
-
-
-  // async function axiosGetConverted(){
-  //     try {
-  //     const response = await axios.post(endpoint,payload);
-  //     let convertedWords = response.data.converted;
-  //     let convertedID = response.data.request_id;
-  //     console.log(response.data);
-
-  //     if( (rt.dataset.order) == convertedID ){
-  //       rt.textContent = convertedWords;
-  //       console.log(rt);
-  //     }
-      
-    
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
