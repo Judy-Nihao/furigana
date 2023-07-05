@@ -1,0 +1,72 @@
+*{
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 2  ;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.speech-bubble{
+	position: absolute;
+  line-height: 1;
+  padding: 1em;
+
+	background-color: hsl(0, 0%, 95%);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	border-radius: .4em;
+
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: hsl(0, 0%, 95%); // 尖角顏色
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -5px;
+	margin-bottom: -10px;
+}
+
+
+ruby{
+  display: inline-flex; //為了搭配跟 rt 元素之間的呼吸空間排版
+  flex-direction: column-reverse;//為了搭配跟 rt 元素之間的呼吸空間排版
+  align-items: center;
+  line-height: 1;
+  
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: hsl(0, 0%, 15%);
+  
+}
+
+rt{
+  display: inline; //為了搭配跟 ruby 元素之間的呼吸空間排版
+  line-height: 1;
+  padding-bottom: 6px;
+
+  letter-spacing: 1px;
+  color: seagreen;
+  padding-left: 4px;
+  padding-right: 4px;
+}
