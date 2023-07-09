@@ -75,20 +75,24 @@ function mySelection(e){
     // </ruby>
     // `
 
-    // bubble.innerHTML = ` 
-    // <ruby>
-    // 探す目を磨き
-    //   <rt>さがす めを みがき</rt>
-    // </ruby>
-    // `
+    bubble.innerHTML = ` 
+    <ruby>
+    探す目を磨き
+      <rt>さがす めを みがき</rt>
+    </ruby>
+    `
 
     
-    convert(range.toString(), bubble);
+    // convert(range.toString(), bubble);
 
     // morpheme(range.toString(), bubble);
 
     // bubble 產生後，對整個文件監聽 click 事件，如果點擊到 bubble 以外的就刪除 bubble 
     document.addEventListener('click', cleanBubble)
+
+    // 判斷 bubble 裡面當下文字是整句的還是拆開的
+    // 如果是整句的，點擊 bubble 後會切換為拆開後添加拼音
+    // 如果是拆開的，點擊 bubble 後會切換為整句添加拼音
     bubble.addEventListener('click', ()=>{ 
       let bubbleText = bubble.querySelector("ruby").childNodes[0]; // textNode is an object 
       let bubbleString = bubbleText.wholeText; //Text.wholeText read-only property allows to specify any text node and obtain all adjacent text as a single string.
@@ -100,9 +104,11 @@ function mySelection(e){
         console.log("我有 data-order 屬性")
         bubble.innerHTML = "";
         convert(range.toString(), bubble);
+        bubble.classList.toggle("split");
 
       }else{
         morpheme(bubbleCleanString, bubble);
+        bubble.classList.toggle("split");
       }
     })
   }

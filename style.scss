@@ -47,7 +47,7 @@ body {
 // 	margin-bottom: -10px;
 // }
 
-.speech-bubble {
+.speech-bubble{
     position: absolute;
     line-height: 1;
     padding: 1em;
@@ -56,7 +56,26 @@ body {
     box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.2);
 }
 
-.speech-bubble:after {
+.speech-bubble.split{
+  background-color: hsl(0, 0%, 20%);
+  ruby{
+    color: white;
+  }
+
+  rt{
+    color: tomato;
+  }
+}
+
+.speech-bubble.split::after{
+  border-color: hsl(0, 0%, 20%) transparent transparent transparent;
+}
+
+.speech-bubble.split::before{
+  display: none;
+}
+
+.speech-bubble::after {
     content: '';
     position: absolute;
     display: block;
@@ -70,7 +89,7 @@ body {
     margin-left: -5px;
 }
 
-.speech-bubble:before {
+.speech-bubble::before {
     content: '';
     position: absolute;
     width: 0;
