@@ -43,14 +43,15 @@ function mySelection(e){
     console.log(range.toString());
 
     let rangeH = range.getBoundingClientRect().height;
+    let rangeW = range.getBoundingClientRect().width;
     let rangeTop = range.getBoundingClientRect().top;
     let rangeLeft = range.getBoundingClientRect().left;
     
     
     let bubble = document.createElement('div');
     bubble.className = 'speech-bubble';
-    bubble.style.top = (rangeTop - rangeH - 60) + 'px';
-    bubble.style.left = rangeLeft + 'px';
+    bubble.style.top = (rangeTop - rangeH - 65) + 'px';
+    bubble.style.left = (rangeLeft) + 'px';
 
     document.body.append(bubble);
 
@@ -74,19 +75,36 @@ function mySelection(e){
     // </ruby>
     // `
 
-    bubble.innerHTML = ` 
-    <ruby>
-    探す目を磨き
-      <rt>さがす めを みがき</rt>
-    </ruby>
-    `
+    // bubble.innerHTML = ` 
+    // <ruby>
+    // 探す目を磨き
+    //   <rt>さがす めを みがき</rt>
+    // </ruby>
+    // `
+
     
-    // convert(range.toString(), bubble);
+    convert(range.toString(), bubble);
 
     // morpheme(range.toString(), bubble);
 
     // bubble 產生後，對整個文件監聽 click 事件，如果點擊到 bubble 以外的就刪除 bubble 
     document.addEventListener('click', cleanBubble)
+    bubble.addEventListener('click', ()=>{ 
+      let bubbleText = bubble.querySelector("ruby").childNodes[0]; // textNode is an object 
+      let bubbleString = bubbleText.wholeText; //Text.wholeText read-only property allows to specify any text node and obtain all adjacent text as a single string.
+      let bubbleCleanString = bubbleString.trim(); //取得除去字串空白後的純文字
+      // console.log(bubbleCleanString);
+
+      // console.log(bubble.querySelector("ruby").children[0]);
+      if(bubble.querySelector("ruby").children[0].hasAttribute("data-order")){
+        console.log("我有 data-order 屬性")
+        bubble.innerHTML = "";
+        convert(range.toString(), bubble);
+
+      }else{
+        morpheme(bubbleCleanString, bubble);
+      }
+    })
   }
 
 }
@@ -97,7 +115,7 @@ function cleanBubble(e){
   // 如果點擊到的不是 <div class="speech-bubble"> 以及其內所含的元素，就刪除 bubble 
   // 注意驚嘆號
   if(!(e.target.className == 'speech-bubble' || e.target.tagName == "RUBY" || e.target.tagName == "RT")){ 
-    console.log('點擊到bubble以外區域');
+    // console.log('點擊到bubble以外區域');
 
     if(document.querySelector('.speech-bubble')){
       document.querySelector('.speech-bubble').remove();

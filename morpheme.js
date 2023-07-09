@@ -5,6 +5,9 @@ import kanjiToHiragana from './kanji-convert.js';
 // 測試 axios 
 export default function morpheme(words, speechBubble){
 
+  // 先清空既有的內容
+  speechBubble.innerHTML = "";
+
   const endpoint = 'https://labs.goo.ne.jp/api/morph';
   const payload = {
     'app_id': import.meta.env.VITE_API_KEY,

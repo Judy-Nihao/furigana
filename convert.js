@@ -7,7 +7,7 @@ export default function convert(input, speechBubble){
   let newRuby = document.createElement('ruby');
   newRuby.textContent = input;
   speechBubble.append(newRuby);
-  console.log(newRuby);
+  // console.log(newRuby);
 
   const endpoint = "https://labs.goo.ne.jp/api/hiragana";
   const payload = {
@@ -25,7 +25,7 @@ export default function convert(input, speechBubble){
     .then((response) => { 
       let converted = response.data.converted;
       
-      console.log(response.data);
+      // console.log(response.data);
     
       let newRt = document.createElement('rt');
       
