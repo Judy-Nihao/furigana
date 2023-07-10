@@ -31,7 +31,7 @@ function mySelection(e){
     
     range = selectionObj.getRangeAt(0);
   
-    console.log(range.toString());
+    // console.log(range.toString());
 
     let rangeH = range.getBoundingClientRect().height;
     let rangeW = range.getBoundingClientRect().width;
