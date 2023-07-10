@@ -10,7 +10,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 150vh;
 }
 
 #app {
@@ -19,6 +19,31 @@ body {
   padding: 2rem;
   text-align: center;
 }
+
+ruby{
+  display: inline-flex; //為了搭配跟 rt 元素之間的呼吸空間排版
+  flex-direction: column-reverse;//為了搭配跟 rt 元素之間的呼吸空間排版
+  align-items: center;
+  line-height: 1;
+  
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: hsl(0, 0%, 15%);
+  
+}
+
+rt{
+  display: inline; //為了搭配跟 ruby 元素之間的呼吸空間排版
+  line-height: 1;
+  padding-bottom: 6px;
+
+  letter-spacing: 1px;
+  color: seagreen;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
 
 // .speech-bubble{
 // 	position: absolute;
@@ -49,30 +74,18 @@ body {
 
 .speech-bubble{
     position: absolute;
+    z-index: 999;
     line-height: 1;
-    padding: 1em;
+    padding: 20px;
     background-color: hsl(0, 0%, 95%);
-    border-radius: .4em;
+    border-radius: 6px;
     box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.2);
+    transform: translate(0%, -100%);
+    transition: background-color 0.2s ease-out;
 }
 
-.speech-bubble.split{
-  background-color: hsl(0, 0%, 20%);
-  ruby{
-    color: white;
-  }
-
-  rt{
-    color: tomato;
-  }
-}
-
-.speech-bubble.split::after{
-  border-color: hsl(0, 0%, 20%) transparent transparent transparent;
-}
-
-.speech-bubble.split::before{
-  display: none;
+.speech-bubble:hover{
+  background-color: hsl(0, 0%, 90%);
 }
 
 .speech-bubble::after {
@@ -87,6 +100,11 @@ body {
     bottom: -10px;
     left: 50%;
     margin-left: -5px;
+    transition: border-color 0.2s ease-out;
+}
+
+.speech-bubble:hover::after{
+  border-color: hsl(0, 0%, 90%) transparent transparent transparent;
 }
 
 .speech-bubble::before {
@@ -104,26 +122,32 @@ body {
 }
 
 
-ruby{
-  display: inline-flex; //為了搭配跟 rt 元素之間的呼吸空間排版
-  flex-direction: column-reverse;//為了搭配跟 rt 元素之間的呼吸空間排版
-  align-items: center;
-  line-height: 1;
-  
-  font-size: 1rem;
-  letter-spacing: 1px;
-  font-weight: bold;
-  color: hsl(0, 0%, 15%);
-  
+// 單詞分開時的樣式
+.speech-bubble.split{
+  background-color: hsl(0, 0%, 20%);
+
+  ruby{
+    color: white;
+  }
+
+  rt{
+    color: tomato;
+  }
 }
 
-rt{
-  display: inline; //為了搭配跟 ruby 元素之間的呼吸空間排版
-  line-height: 1;
-  padding-bottom: 6px;
-
-  letter-spacing: 1px;
-  color: seagreen;
-  padding-left: 4px;
-  padding-right: 4px;
+.speech-bubble.split:hover{
+  background-color: hsl(0, 0%, 30%);
 }
+
+.speech-bubble.split::after{
+  border-color: hsl(0, 0%, 20%) transparent transparent transparent;
+}
+
+.speech-bubble.split:hover::after{
+  border-color: hsl(0, 0%, 30%) transparent transparent transparent;
+}
+
+.speech-bubble.split::before{
+  display: none;
+}
+

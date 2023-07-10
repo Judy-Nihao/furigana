@@ -2,7 +2,6 @@ import axios from "axios";
 
 // 測試 axios 
 export default function convert(input, speechBubble){
-
   // 創造 ruby 元素，植入選取文字，並添加到 speechBubble 裡面
   let newRuby = document.createElement('ruby');
   newRuby.textContent = input;
@@ -32,7 +31,7 @@ export default function convert(input, speechBubble){
       newRt.textContent = converted;
 
       ruby.append(newRt);
-      
+
     })
     .catch((error) => console.log(error));
   } 
