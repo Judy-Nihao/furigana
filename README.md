@@ -23,6 +23,13 @@
 ## 推薦的插件複合技
 建議搭配「Google 翻譯」的語音翻譯功能使用，複製所選日文貼到「Google 翻譯」中，就能一邊看著漢字與平假名，一邊聽著讀音，雙向加強記憶。
 
+以下示意圖也可觀察出「承れ」的標音差異。
+
+![](https://raw.githubusercontent.com/Judy-Nihao/furigana/main/public/screen-shot-whole.png)
+
+![](https://raw.githubusercontent.com/Judy-Nihao/furigana/main/public/screen-shot-split.png)
+
+
 ## Credit
 
 此插件應用下列兩項「goo Labs API」：
