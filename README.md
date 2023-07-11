@@ -2,8 +2,17 @@
 
 這是一個電腦版 Google Chrome 擴充功能，替網頁上選取的文字標上平假名拼音。
 
+
+
 ## 解決的需求
 日語初學者對漢字讀音還不熟，經常需要在漢字上標註「平假名」讀音，這個擴充功能讓人在瀏覽網頁看到不會讀的漢字時，可以使用游標反白選取文字後，自動添加上平假名，研讀漢字發音的同時，也增進視覺記憶。
+
+## 示範影片
+
+https://youtu.be/Qt6EgHHGims
+
+（ 擴充功能上架審核中 ）
+
 
 ## 使用方式
 1. 安裝擴充功能後，滑鼠游標選取網頁任意日文，所選的日文字詞就會自動添加平假名音標，出現在提示文字泡泡之中。
@@ -14,9 +23,9 @@
     - 整句模式：直接對整段選取詞句添加平假名。
     - 拆分模式：將所選詞語拆解成最小有意義的詞彙，視覺上文字隔開，能更輕易看出每個漢字對應到的平假名拼音。
 
-![](https://raw.githubusercontent.com/Judy-Nihao/furigana/main/public/%E2%80%8Efurigana%E7%A4%BA%E6%84%8F%E5%9C%9601.jpeg)
+![](https://github.com/Judy-Nihao/furigana/blob/main/public/%E2%80%8Efurigana%E7%A4%BA%E6%84%8F%E5%9C%9601.jpeg?raw=true)
 
-![](https://raw.githubusercontent.com/Judy-Nihao/furigana/main/public/%E2%80%8Efurigana%E7%A4%BA%E6%84%8F%E5%9C%9602.jpeg)
+![](https://github.com/Judy-Nihao/furigana/blob/main/public/%E2%80%8Efurigana%E7%A4%BA%E6%84%8F%E5%9C%9602.jpeg?raw=true)
 
 ![](https://github.com/Judy-Nihao/furigana/blob/main/public/%E2%80%8Efurigana%E7%A4%BA%E6%84%8F%E5%9C%9604.jpeg?raw=true)
 
