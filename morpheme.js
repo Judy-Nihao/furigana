@@ -2,7 +2,6 @@ import axios from 'axios';
 import kanjiToHiragana from './kanji-convert.js';
 
 
-// 測試 axios 
 export default function morpheme(words, speechBubble){
 
   // 先清空既有的內容
@@ -21,7 +20,8 @@ export default function morpheme(words, speechBubble){
     axios
     .post(endpoint,payload)
     .then((response) => {
-      let result = response.data.word_list; // 是一個陣列裡面包陣列
+      let result = response.data.word_list; 
+      // 是一個陣列裡面包陣列
 
       result.forEach((item)=>{
 
@@ -47,7 +47,5 @@ export default function morpheme(words, speechBubble){
     })
     .catch((error) => console.log(error));
     }
-
-  
 
 }

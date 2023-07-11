@@ -23,10 +23,9 @@ function mySelection(e){
 
 
   // 滑鼠選取完畢後的位置，是focus
-  // focus 距離節點開頭差距不等於 0 個字
-  // selectionObj.focusOffset !== 0 
+  // focusOffset 可以抓到滑鼠結束時，當下節點距離開頭節點的差距字數
 
-  // 必須不是選到空字串，才觸發後續動作，也就是至少要選到一個字元才會觸發
+  // 選到的不是空字串才觸發後續動作，也就是至少要選到一個字元才會觸發
   if(selectionObj.toString() !== ""){
     
     range = selectionObj.getRangeAt(0);
@@ -54,8 +53,6 @@ function mySelection(e){
     //   <rt>こうかんは うけたまわれません</rt>
     // </ruby>
     // `
-
-    // console.log(bubble.offsetWidth);
 
     convert(range.toString(), bubble);
 
@@ -121,16 +118,11 @@ function switchStructure(range){
   let bubbleString = bubbleText.wholeText; 
   let bubbleCleanString = bubbleString.trim(); 
   
-  // console.log(event.currentTarget);
-  // console.log(range);
-  // console.log(rtElement);
-  // console.log(bubbleText);
-  // console.log(bubbleCleanString);
-  
-  
   if(rtElement.hasAttribute("data-order")){
-    console.log("rt 元素 有 data-order 屬性")
-    event.currentTarget.innerHTML = ""; //清空既有內容再放入新的拼音結果
+    
+    event.currentTarget.innerHTML = ""; 
+    //清空既有內容再放入新的拼音結果
+
     convert(range.toString(), event.currentTarget);
     event.currentTarget.classList.toggle("split");
 
@@ -140,29 +132,3 @@ function switchStructure(range){
   }
 
 };
-
-
-
-
- // (e)=>{ 
-        // console.log(e.currentTarget)
-        // console.log(e.currentTarget.querySelector("ruby").childNodes[0]);
-        // console.log(e.currentTarget.querySelector("ruby").children[0]);
-
-        // let rtElement = e.currentTarget.querySelector("ruby").children[0]
-        // let bubbleText = e.currentTarget.querySelector("ruby").childNodes[0]; 
-        // let bubbleString = bubbleText.wholeText; 
-        // let bubbleCleanString = bubbleString.trim(); 
-        
-
-        // if(rtElement.hasAttribute("data-order")){
-        //   console.log("rt 元素 有 data-order 屬性")
-        //   e.currentTarget.innerHTML = "";
-        //   convert(range.toString(), e.currentTarget);
-        //   e.currentTarget.classList.toggle("split");
-
-        // }else{
-        //   morpheme(bubbleCleanString, e.currentTarget);
-        //   e.currentTarget.classList.toggle("split");
-        // }
-      // }
