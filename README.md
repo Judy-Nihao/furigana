@@ -2,16 +2,18 @@
 
 這是一個電腦版 Google Chrome 擴充功能，替網頁上選取的文字標上平假名拼音。
 
-
-
 ## 解決的需求
 日語初學者對漢字讀音還不熟，經常需要在漢字上標註「平假名」讀音，這個擴充功能讓人在瀏覽網頁看到不會讀的漢字時，可以使用游標反白選取文字後，自動添加上平假名，研讀漢字發音的同時，也增進視覺記憶。
+
+![](https://github.com/Judy-Nihao/furigana/blob/main/public/extension-demo.jpeg?raw=true)
 
 ## 示範影片
 
 https://youtu.be/Qt6EgHHGims
 
 （ 擴充功能上架審核中 ）
+
+![](https://github.com/Judy-Nihao/furigana/blob/main/public/extension-preview-02.png?raw=true)
 
 
 ## 使用方式
